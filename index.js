@@ -13,4 +13,7 @@ class CEXIO {
   }
 }
 
-module.exports = CEXIO
+module.exports = {
+  default: CEXIO,
+  CEXIO,
+}
