@@ -1,7 +1,22 @@
 declare module 'cexio-api-node' {
+
+    interface TickerResponseOK   {
+        timestamp: string,
+        low: string,
+        high: string,
+        last: string,
+        volume: string,
+        volume30d: string,
+        bid: number,
+        ask: number,
+        priceChange: string,
+        priceChangePercentage: string,
+        pair: string
+    }
+
     class PromiseRest {
         currency_limits();
-        ticker(symbol: string);
+        ticker(symbol: string): Promise<TickerResponseOK>;
         all_tickers();
         last_price();
         last_prices();
