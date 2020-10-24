@@ -14,6 +14,17 @@ declare module 'cexio-api-node' {
         pair: string
     }
 
+    interface AccountBalanceResponseOK {
+        BTC:{
+            available:string;
+            orders:string
+        };
+        USD:{
+            available:string;
+            orders:string
+        };
+    }
+
     class PromiseRest {
         currency_limits();
         ticker(symbol: string): Promise<TickerResponseOK>;
@@ -23,7 +34,7 @@ declare module 'cexio-api-node' {
         historical_1m();
         orderbook();
         trade_history();
-        account_balance();
+        account_balance(): Promise<AccountBalanceResponseOK>;
         open_orders();
         active_orders_status();
         archived_orders();
